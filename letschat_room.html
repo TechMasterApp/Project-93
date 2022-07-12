@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
@@ -14,15 +17,19 @@
 </head>
 <body>
     <div class="jumbotron text-center">
+        <button id="logout" class="glyphicon glyphicon-log-out btn btn-danger" onclick="logout()">Logout</button>
+		<br>
         <h1>LetsChat</h1>
-        <p>Type your username here</p>
-        <div class="input-group">
-            <input type="text" id="un" class="form-control" size="50" placeholder="Username">
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-danger" onclick="joinUs()">Join Us!</button>
-            </div>
-        </div>
+        <br>
+		<h3 class="color_white" id="wt"></h3>
+		<div class="form-group input_div_room_page">
+			<label>#Add Room:</label>
+			<input type="text" class="form-control" placeholder="#Room Name" id="rn">
+		</div>
+		<button class="btn btn-success" onclick="addRoom()">#Add Room</button>
+		<h3 class="color_white">#TRENDINGROOMS</h3>
+		<div id="output"></div>
     </div>
 </body>
-<script src="letschat.js"></script>
+<script src="letschat_room.js"></script>
 </html>
